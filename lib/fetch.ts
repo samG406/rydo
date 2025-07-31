@@ -1,8 +1,18 @@
 import { useState, useEffect, useCallback } from "react";
 
-export const fetchAPI = async (url: string, options?: RequestInit) => {
+export const fetchAPI = async (
+  url: string,
+  options?: RequestInit,
+  userId?: string
+) => {
   try {
-    const response = await fetch(url, options);
+    // Add user ID to headers if provided
+    const headers = {
+      ...options?.headers,
+      ...(userId && { "x-user-id": userId }),
+    };
+
+    const response = await fetch(url, { ...options, headers });
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -28,6 +38,14 @@ export const useFetch = <T>(url: string, options?: RequestInit) => {
   const [error, setError] = useState<string | null>(null);
 
   const fetchData = useCallback(async () => {
+    // Don't fetch if URL is empty
+    if (!url || url.trim() === "") {
+      setData(null);
+      setLoading(false);
+      setError(null);
+      return;
+    }
+
     setLoading(true);
     setError(null);
 

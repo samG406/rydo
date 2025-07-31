@@ -67,6 +67,7 @@ declare interface GoogleInputProps {
   initialLocation?: string;
   containerStyle?: string;
   textInputBackgroundColor?: string;
+  onFocus?: () => void;
   handlePress: ({
     latitude,
     longitude,
@@ -104,6 +105,12 @@ declare interface LocationStore {
   destinationLatitude: number | null;
   destinationLongitude: number | null;
   destinationAddress: string | null;
+  validation: {
+    pickupInRegion: boolean;
+    destInRegion: boolean;
+    bothInRegion: boolean;
+    message: string;
+  };
   setUserLocation: ({
     latitude,
     longitude,
@@ -122,6 +129,8 @@ declare interface LocationStore {
     longitude: number;
     address: string;
   }) => void;
+  clearLocations: () => void;
+  clearValidation: () => void;
 }
 
 declare interface DriverStore {

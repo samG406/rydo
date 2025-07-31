@@ -11,10 +11,10 @@ const TabIcon = ({
   focused: boolean;
 }) => (
   <View
-    className={`flex flex-row justify-center items-center rounded-full ${focused ? "bg-general-300" : ""}`}
+    className={`flex flex-row justify-center items-center rounded-full ${focused ? "bg-general-400" : ""}`}
   >
     <View
-      className={`rounded-full w-12 h-12 items-center justify-center ${focused ? "bg-general-400" : ""}`}
+      className={`rounded-full w-11 h-11 items-center justify-center ${focused ? "bg-general-400" : ""}`}
     >
       <Image
         source={source}
@@ -35,13 +35,13 @@ export default function Layout() {
         tabBarInactiveTintColor: "white",
         tabBarShowLabel: false,
         tabBarStyle: {
-          backgroundColor: "#333333",
-          borderRadius: 50,
-          paddingBottom: 0, // ios only
+          backgroundColor: "#3345",
+          borderRadius: 40,
+          paddingBottom: 25,
           overflow: "hidden",
           marginHorizontal: 20,
           marginBottom: 20,
-          height: 78,
+          height: 60,
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -88,6 +88,12 @@ export default function Layout() {
           tabBarIcon: ({ focused }) => (
             <TabIcon source={icons.profile} focused={focused} />
           ),
+        }}
+      />
+      <Tabs.Screen
+        name="index"
+        options={{
+          href: null,
         }}
       />
     </Tabs>
