@@ -10,7 +10,8 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.Rydo"
+      "bundleIdentifier": "com.anonymous.Rydo",
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "adaptiveIcon": {
@@ -18,7 +19,8 @@
         "backgroundColor": "#2f80ed"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.anonymous.Rydo"
+      "package": "com.anonymous.Rydo",
+      "googleServicesFile": "./google-services.json"
     },
     "web": {
       "bundler": "metro",

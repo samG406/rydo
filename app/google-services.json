@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "496476889810",
+    "project_id": "rydo-466917",
+    "storage_bucket": "rydo-466917.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496476889810:android:3bcde43625cfe078b2030b",
+        "android_client_info": {
+          "package_name": "com.anonymous.rydo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGd1tunRvhMu1iNYcTuj1JfUBkjdrk0Ts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
